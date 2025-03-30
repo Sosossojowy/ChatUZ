@@ -103,6 +103,18 @@ System będzie składał się z trzech głównych warstw:
 
 - **Baza danych:**  
 
+## Kosztorys
+1. **Informacje ogólne**
+   - Czas trwania projektu: 15 tygodni
+   - Stawka wynagrodzeniowa: 5000 PLN brutto / miesiąc
+   - Liczba osób pracujących nad projektem: 3 osoby
+2. **Rozliczenie kosztów pracy**
+   - **Przeliczenie wynagrodzenia**
+      - 5000 PLN brutto / miesiąc
+      - 5000 PLN / 4 tygodnie = 1250 PLN
+      - 15 tygodni * 1250 PLN = 18 750 PLN (cena za osobę)
+3. **Całkowity koszt projektu**
+   - Suma całkowita: 18 750 PLN * 3 osoby = 56 250 PLN
 
 ## Użyteczność
 
