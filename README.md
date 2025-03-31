@@ -1,19 +1,13 @@
-## ChatUZ
-Projekt inżynierii oprogramowania
-
-# Cel aplikacji
-
--Celem zaprojektowania platformy internetowej WWW jest ułatwienie wyboru promotora i tematu pracy inżynierskiej/magisterskiej studentom Uniwersytetu Zielonogórskiego z wykorzystaniem modelu SI.
-
-
 ##Wprowadzenie
-#opis
--
-#cel
+#Opis
+
+##Cel
+
 ##Funkcjonalności
 
 ##Architektura systemu
-#technologie użyte 
+
+##Technologie użyte 
 
 ##Przypadki użycia
 
@@ -31,6 +25,10 @@ Projekt inżynierii oprogramowania
 ## Opis projektu
 
 Aplikacja webowa ma na celu automatyczne dopasowanie tematu pracy inżynierskiej/magisterskiej oraz promotora do studenta na podstawie jego zakresu zainteresowań. System będzie wykorzystywał model sztucznej inteligencji (AI), który analizuje informacje dostarczone przez studenta i przypisuje odpowiedni temat oraz promotorów, którzy najlepiej odpowiadają jego zainteresowaniom.
+
+##Cel
+
+-Uproszczenie procesu wyboru tematu pracy i promotora.
 
 ### Funkcjonalności:
 
@@ -58,6 +56,8 @@ Aplikacja webowa ma na celu automatyczne dopasowanie tematu pracy inżynierskiej
 
 ## Technologie:
 
+Aplikacja wykorzystuje technologie (React, Node.js, ChatGPT-4o Mini) do procesu przydziału tematów i promotorów. Używa NLP które trafnie dopasowuje dane, a przechowywanie ich
+w pliku JSON upraszcza architekturę.
 
 ## Architektura systemu
 
@@ -71,7 +71,7 @@ System będzie składał się z trzech głównych warstw:
    - API RESTful do komunikacji z frontendem.
 
 3. **Model AI:**  
-   - Model do analizy tekstu wprowadzonego przez studentów i promotorów, który będzie wykorzystywał algorytmy NLP do przypisania tematów i promotorów.
+   - Model do analizy tekstu wprowadzonego przez studentów i promotorów, który będzie wykorzystywał Chat GPT 4o mini.
 
 ## Przebieg działania aplikacji
 
@@ -96,12 +96,14 @@ System będzie składał się z trzech głównych warstw:
 ## Wymagania systemowe
 
 - **Frontend:**  
-
+  -javascript
+  -css
 
 - **Backend:**  
+   -node.js
 
-
-- **Baza danych:**  
+- **Baza danych:**
+   -Pilk JSON
 
 ## Kosztorys
 1. **Informacje ogólne**
@@ -120,3 +122,26 @@ System będzie składał się z trzech głównych warstw:
 
 - Aplikacja jest skierowana do studentów wyższych uczelni, którzy chcą otrzymać odpowiedni temat pracy inżynierskiej/magisterskiej oraz dopasowanego promotora w oparciu o swoje zainteresowania.
 - Aplikacja jest również przydatna dla promotorów, którzy chcą zarejestrować swoje specjalizacje i wybrać odpowiednich studentów do współpracy.
+
+## Harmonogram 
+1. Przygotowanie projektu (3 tygodnie)
+      - Analiza wymagań
+      - Wybór technologii
+2.Implementacja Frontendu	(3 tygodnie)
+      - Stworzenie interfejsu użytkownika
+      - Integracja z API
+3. Implementacja Backendu	(3 tygodnie)
+      - API RESTful
+      - Logika przetwarzania danych JSON
+4. Integracja z AI	(2 tygodnie)
+      - Połączenie z OpenAI API
+      - Implementacja dopasowań NLP
+5. Testowanie	(2 tygodnie)
+   	- Testy jednostkowe i integracyjne
+      - Poprawki
+6. Wdrożenie	(1 tydzień)
+      - Deploy aplikacji
+      - Dokumentacja końcowa
+7. Utrzymanie	3 tygodnie
+      - Obsługa błędów
+      - Ewentualne poprawki
