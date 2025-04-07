@@ -127,21 +127,19 @@ System będzie składał się z trzech głównych warstw:
 1. Przygotowanie projektu (3 tygodnie)
       - Analiza wymagań
       - Wybór technologii
-2.Implementacja Frontendu	(3 tygodnie)
+2.Implementacja Frontendu	(2 tygodnie)
       - Stworzenie interfejsu użytkownika
       - Integracja z API
-3. Implementacja Backendu	(3 tygodnie)
+3. Implementacja Backendu	(2 tygodnie)
       - API RESTful
       - Logika przetwarzania danych JSON
 4. Integracja z AI	(2 tygodnie)
       - Połączenie z OpenAI API
       - Implementacja dopasowań NLP
 5. Testowanie	(2 tygodnie)
-   	- Testy jednostkowe i integracyjne
+   	- Testy 
       - Poprawki
 6. Wdrożenie	(1 tydzień)
       - Deploy aplikacji
       - Dokumentacja końcowa
-7. Utrzymanie	3 tygodnie
-      - Obsługa błędów
-      - Ewentualne poprawki
+
