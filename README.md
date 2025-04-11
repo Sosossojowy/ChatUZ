@@ -1,21 +1,3 @@
-##Wprowadzenie
-#Opis
-
-##Cel
-
-##Funkcjonalności
-
-##Architektura systemu
-
-##Technologie użyte 
-
-##Przypadki użycia
-
-##Wymagania systemowe
-
-##Podział prac
-
-##Podsumowanie
 
 
 ///////////////////////////////////////
