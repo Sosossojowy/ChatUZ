@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatUZ - Przydział Tematu Pracy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="main">
+    <h1>ChatUZ</h1>
+    <div class="input-container">
+      <form id="assignmentForm">
+        <input type="text" id="imie" placeholder="Imię" required>
+        <input type="text" id="nazwisko" placeholder="Nazwisko" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="zainteresowania" placeholder="Zakres zainteresowań" required></textarea>
+        <button type="submit">Przydziel temat i promotora</button>
+      </form>
+    </div>
+    <div id="output"></div>
+  </section>
+  <script>
+    document.getElementById("assignmentForm").addEventListener("submit", async (e) => {
+      console.log("start");
+      e.preventDefault();
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = `Szukanie...`;
+      const imie = document.getElementById("imie").value;
+      const nazwisko = document.getElementById("nazwisko").value;
+      const email = document.getElementById("email").value;
+      const zainteresowania = document.getElementById("zainteresowania").value;
+      const response = await fetch("/assign", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ imie, nazwisko, email, zainteresowania })
+      });
+      const result = await response.json();
+      console.log("end");
+      if(result.assignment.error) {
+        outputDiv.innerHTML = `<p>Błąd: ${result.assignment.error}</p><pre>${result.assignment.raw}</pre>`;
+      } else {
+        outputDiv.innerHTML = `
+          <h2>Przydział:</h2>
+          <p><strong>Temat:</strong> ${result.assignment.temat}</p>
+          <p><strong>Promotor:</strong> ${result.assignment.promotor}</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
