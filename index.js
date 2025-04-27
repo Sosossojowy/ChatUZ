@@ -7,6 +7,7 @@ const OpenAI = require("openai");
 require("dotenv").config();
 const key = process.env.OPENAI_API_KEY;
 
+
 // Inicjalizacja klienta OpenAI
 const openai = new OpenAI({ apiKey: key });
 
@@ -17,11 +18,19 @@ const dataContext = readFileSync("data.json", "utf8");
 const app = express();
 
 // Umożliwienie serwowania statycznych plików z katalogu public (HTML, CSS, JS)
-app.use(express.static("public"));
+app.use(express.static("views"));
+
+//używamy szablonów ejs
+app.set("view engine", "ejs");
 
 // Parsowanie JSON w ciele zapytań
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+app.get("/", (req, res) => {
+  res.render('index'); 
+});
 
 // Endpoint przyjmujący dane studenta i zwracający przydział tematu i promotora
 app.post("/assign", async (req, res) => {
@@ -40,12 +49,14 @@ Imię i nazwisko: ${imie} ${nazwisko}
 Email: ${email}
 Zakres zainteresowań: ${zainteresowania}
 
-Na tej podstawie wybierz najodpowiedniejszy temat pracy oraz przypisz promotora, którego specjalizacja najlepiej odpowiada zainteresowaniom studenta.
-Wygeneruj temat pracy dyplomowej i przypisz promotora na podstawie danych wejściowych.
+Na tej podstawie dobierz listing najodpowiedniejszych tematów prac oraz do każdego przypisz promotora, którego specjalizacja najlepiej odpowiada zainteresowaniom studenta.
 Zwróć wyłącznie odpowiedź w formacie JSON:
 {
-  "temat": "...",
-  "promotor": "..."
+  "propozycje": [
+    { "temat": "...", "promotor": "..." },
+    { "temat": "...", "promotor": "..." },
+    ...
+  ]
 }
 Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień.
 `;
@@ -53,7 +64,7 @@ Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień.
   try {
     // Wywołanie API ChatGPT
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4.1-mini",
       messages: [
         { role: "system", content: systemPrompt },
         {
@@ -71,13 +82,14 @@ Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień.
     } catch (parseError) {
       assignment = { error: "Nie udało się sparsować odpowiedzi z modelu.", raw: answerContent };
     }
-
-    res.json({ assignment });
+    res.render('assign', { propozycje: assignment.propozycje || [] });
   } catch (error) {
     console.error("Błąd pobierania odpowiedzi:", error);
     res.status(500).json({ error: error.toString() });
   }
 });
+
+
 
 // Uruchomienie serwera na porcie 3000 lub określonym w zmiennych środowiskowych
 const port = process.env.PORT || 3000;
