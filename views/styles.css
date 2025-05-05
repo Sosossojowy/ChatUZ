@@ -27,20 +27,22 @@ body {
   }
   
   .input-container {
+    padding: 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20%;
   }
   
   .input-container input,
   .input-container textarea {
     width: 100%;
     padding: 10px;
+    margin-bottom: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
   }
-  
+
   button {
     padding: 10px;
     font-size: 16px;
@@ -50,7 +52,36 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+  .result{
+    z-index: 1;
+    overflow-x: auto;
+    padding-top: 10px;
+    transition: 0.6s ease;
+
+}
+.result ul {
+    margin-top: 50px;
+    position: relative;
+    height: 97vh;
+}
+.result ul li{
+    list-style:none;
+    margin: 10px 0;
+
+
+}
+.result ol li:hover{
+  background-color: rgba(65, 65, 248, 0.61);
+  transition: 0.3s ease;
+    
+    }
+.result ol li a{
+  white-space: nowrap;
+  text-decoration: none;
+  color:rgb(0, 0, 0);
+    
   
+  }
   .input-container button:hover {
     background-color: #0056b3;
   }
@@ -62,4 +93,30 @@ body {
     border-radius: 5px;
     color: #333;
   }
+  #loader {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background-color: #343541;
+    justify-content: center;
+    
+  }
+  .text p{
+    color: #ccc;
+  }
   
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

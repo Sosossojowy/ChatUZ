@@ -2,6 +2,7 @@
 const { readFileSync } = require("fs");
 const express = require("express");
 const OpenAI = require("openai");
+const expressLayouts = require("express-ejs-layouts");
 
 // Wczytanie zmiennych środowiskowych z pliku .env
 require("dotenv").config();
@@ -26,7 +27,8 @@ app.set("view engine", "ejs");
 // Parsowanie JSON w ciele zapytań
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(expressLayouts)
+app.set('layout', 'layout')
 
 app.get("/", (req, res) => {
   res.render('index'); 
@@ -58,13 +60,13 @@ Zwróć wyłącznie odpowiedź w formacie JSON:
     ...
   ]
 }
-Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień.
+Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj poprzednich wpisów używkownika.
 `;
 
   try {
     // Wywołanie API ChatGPT
     const completion = await openai.chat.completions.create({
-      model: "gpt-4.1-mini",
+      model: "gpt-4o-mini",
       messages: [
         { role: "system", content: systemPrompt },
         {
