@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatUZ - Przydział Tematu Pracy</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <section class="main">
-    <h1>ChatUZ</h1>
-    <div class="input-container">
-      <form action="/assign" method="POST" id="assignmentForm">
-        <input type="text" name="imie" id="imie" placeholder="Imię" required>
-        <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko" required>
-        <input type="email" name="email" id="email" placeholder="Email" required>
-        <textarea name="zainteresowania" id="zainteresowania" placeholder="Zakres zainteresowań" required></textarea>
-        <button type="submit">Przydziel temat i promotora</button>
-      </form>
+
+
+<section class="main">
+  <h1>ChatUZ</h1>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="text">
+      <p>Parsowanie...</p> 
     </div>
-  </section>
-</body>
-</html>
+
+  </div>
+
+  <div class="input-container">
+    <form id="assignForm" action="/assign" method="POST">
+      <input type="text" name="imie" id="imie" placeholder="Imię" required>
+      <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko" required>
+      <input type="email" name="email" id="email" placeholder="Email" required>
+      <textarea name="zainteresowania" id="zainteresowania" placeholder="Zakres zainteresowań" required></textarea>
+      <button type="submit">Przydziel temat i promotora</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("assignForm").addEventListener("submit", function () {
+      document.getElementById("loader").style.display = "flex";
+    });
+  </script>
+</section>
+
 
