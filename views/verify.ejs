@@ -1,0 +1,20 @@
+ 
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <% if (step === 'email') { %>
+     <h1>Weryfikacja adresu e-mail</h1>
+    <form action="/verify" method="POST">
+      <input type="email" name="email" placeholder="Adres e-mail" required>
+      <button type="submit">Wyślij kod</button>
+    </form>
+  <% } else if (step === 'code') { %>
+    <h1>Weryfikacja Kodu</h1>
+    <form action="/verify" method="POST">
+      <input type="hidden" name="email" value="<%= email %>">
+      <input type="text" name="code" placeholder="Wpisz kod z e-maila" required>
+      <button type="submit">Potwierdź</button>
+    </form>
+  <% } %>
