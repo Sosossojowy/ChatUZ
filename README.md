@@ -108,6 +108,7 @@ System będzie składał się z trzech głównych warstw:
 ## Harmonogram 
 1. Przygotowanie projektu (3 tygodnie)
       - Analiza wymagań
+      - Wybór technologii
 2.Implementacja Frontendu	(2 tygodnie)
       - Stworzenie interfejsu użytkownika
       - Integracja z API
