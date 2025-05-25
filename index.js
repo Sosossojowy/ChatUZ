@@ -26,6 +26,7 @@ app.use(express.static("views"));
 //używamy szablonów ejs
 app.set("view engine", "ejs");
 
+
 // Parsowanie JSON w ciele zapytań
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
