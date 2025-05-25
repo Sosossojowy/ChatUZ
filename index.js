@@ -41,9 +41,9 @@ app.post("/assign", async (req, res) => {
   // Budowanie system prompta z danymi projektu, kontekstem z data.json oraz danymi studenta
   const systemPrompt = `
 Projekt: Przydział Tematu Pracy i Promotora
-Cel: Na podstawie zakresu zainteresowań studenta oraz dostępnych danych o promotorach i tematach, system przypisuje odpowiedni temat pracy oraz promotora.
+Cel: Na podstawie zakresu zainteresowań studenta oraz dostępnych danych o promotorach i ich przypisanych tematach, system przypisuje najodpowiedniejszy temat pracy oraz promotora.
 
-Dane promotorów i tematów:
+Dane promotorów i przypisanych tematów:
 ${dataContext}
 
 Dane studenta:
@@ -51,7 +51,7 @@ Imię i nazwisko: ${imie} ${nazwisko}
 Email: ${email}
 Zakres zainteresowań: ${zainteresowania}
 
-Na tej podstawie dobierz listing najodpowiedniejszych tematów prac oraz do każdego przypisz promotora, którego specjalizacja najlepiej odpowiada zainteresowaniom studenta.
+Na tej podstawie dobierz najodpowiedniejszy temat pracy oraz promotora, którego specjalizacja najlepiej odpowiada zainteresowaniom studenta.
 Zwróć wyłącznie odpowiedź w formacie JSON:
 {
   "propozycje": [
@@ -60,7 +60,7 @@ Zwróć wyłącznie odpowiedź w formacie JSON:
     ...
   ]
 }
-Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj poprzednich wpisów używkownika.
+Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj poprzednich wpisów użytkownika.
 `;
 
   try {
