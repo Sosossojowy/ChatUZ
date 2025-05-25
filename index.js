@@ -36,9 +36,6 @@ app.use('/',router);
 app.use('/verify', Mailroutes);
 
 
-
-
-
 // Uruchomienie serwera na porcie 3000 lub określonym w zmiennych środowiskowych
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Serwer działa na porcie ${port}`));

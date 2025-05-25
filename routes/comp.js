@@ -1,5 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const { readFileSync } = require("fs");
+const dataContext = readFileSync("data.json", "utf8");
+
+const OpenAI = require("openai");
+require("dotenv").config();
+const key = process.env.OPENAI_API_KEY;
+
+
+// Inicjalizacja klienta OpenAI
+const openai = new OpenAI({ apiKey: key });
 
 router.get("/", (req, res) => {
   res.render('index'); 
