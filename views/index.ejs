@@ -1,6 +1,8 @@
 
 
 <section class="main">
+  <a href="https://uz.zgora.pl/"><img href="" src="./images/logo UZ pion - CMYK.jpg"></a>
+  
   <h1>ChatUZ</h1>
 
   <div id="loader">
@@ -12,11 +14,11 @@
   </div>
 
   <div class="input-container">
-    <form id="assignForm" action="/assign" method="POST">
-      <input type="text" name="imie" id="imie" placeholder="Imię" required>
-      <input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko" required>
-      <input type="email" name="email" id="email" placeholder="Email" required>
-      <textarea name="zainteresowania" id="zainteresowania" placeholder="Zakres zainteresowań" required></textarea>
+    <form class="form-container" id="assignForm" action="/assign" method="POST">
+      <div class="form-field"><input type="text" name="imie" id="imie" placeholder="Imię" required></div>
+      <div class="form-field"><input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko" required></div>
+      <div class="form-field"><input type="email" name="email" id="email" placeholder="Email" required></div>
+      <div class="form-field"><textarea name="zainteresowania" id="zainteresowania" placeholder="Zakres zainteresowań" required></textarea></div>     
       <button type="submit">Przydziel temat i promotora</button>
     </form>
   </div>
