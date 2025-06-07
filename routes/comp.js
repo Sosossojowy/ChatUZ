@@ -65,7 +65,7 @@ Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj pop
     } catch (parseError) {
       assignment = { error: "Nie udało się sparsować odpowiedzi z modelu.", raw: answerContent };
     }
-    res.render('assign', { propozycje: assignment.propozycje || [] });
+    res.render('assign', { propozycje: assignment.propozycje || [], mail : req.body.email });
   } catch (error) {
     console.error("Błąd pobierania odpowiedzi:", error);
     res.status(500).json({ error: error.toString() });
