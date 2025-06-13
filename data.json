@@ -1,38 +1,161 @@
 {
   "promotorzy": [
-    { "imie": "Anna", "nazwisko": "Nowak", "specjalizacja": "Sztuczna inteligencja", "tematy": ["Analiza wpływu AI na rynek pracy", "Etyczne wyzwania rozwoju sztucznej inteligencji"] },
-    { "imie": "Jan", "nazwisko": "Kowalski", "specjalizacja": "Uczenie maszynowe", "tematy": ["Wykrywanie ataków phishingowych za pomocą uczenia maszynowego", "Zastosowanie sieci neuronowych w analizie danych finansowych"] },
-    { "imie": "Andrzej", "nazwisko": "Skibidi", "specjalizacja": "Historia memów", "tematy": ["Historia memów i ich wpływ na kulturę internetową"] },
-    { "imie": "Marcin", "nazwisko": "Kwiecień", "specjalizacja": "Blockchain", "tematy": ["Infrastruktura blockchain a kryptowaluty", "Zastosowanie blockchain w logistyce"] },
-    { "imie": "Ewa", "nazwisko": "Kamińska", "specjalizacja": "Cyberbezpieczeństwo", "tematy": ["Zarządzanie bezpieczeństwem danych w chmurze", "Bezpieczeństwo aplikacji mobilnych na Androida"] },
-    { "imie": "Tomasz", "nazwisko": "Zieliński", "specjalizacja": "Big Data", "tematy": ["Analiza danych z sensorów w inteligentnych domach", "Optymalizacja działania aplikacji webowych"] },
-    { "imie": "Katarzyna", "nazwisko": "Wiśniewska", "specjalizacja": "Grafika komputerowa", "tematy": ["Wizualizacja danych 3D w aplikacjach webowych", "Symulacja tłumów w środowisku 3D"] },
-    { "imie": "Michał", "nazwisko": "Wójcik", "specjalizacja": "Systemy wbudowane", "tematy": ["System monitorowania jakości powietrza oparty na IoT", "Implementacja systemu zarządzania flotą dronów"] },
-    { "imie": "Agnieszka", "nazwisko": "Sikora", "specjalizacja": "Inżynieria oprogramowania", "tematy": ["Projekt systemu zarządzania dokumentacją projektową", "Projektowanie i wdrażanie CI/CD w projekcie programistycznym"] },
-    { "imie": "Paweł", "nazwisko": "Górski", "specjalizacja": "Robotyka", "tematy": ["Tworzenie bota do gier FPS opartych na AI", "System automatycznej moderacji treści na forach"] },
-    { "imie": "Joanna", "nazwisko": "Maj", "specjalizacja": "Interakcja człowiek-komputer", "tematy": ["Projektowanie interfejsów użytkownika z użyciem React", "System analizy nastrojów na podstawie postów w social media"] },
-    { "imie": "Robert", "nazwisko": "Baran", "specjalizacja": "Przetwarzanie języka naturalnego", "tematy": ["Wirtualny asystent głosowy oparty na NLP", "Projektowanie chatbotów do obsługi klienta"] },
-    { "imie": "Beata", "nazwisko": "Czarnecka", "specjalizacja": "Bazy danych", "tematy": ["Badanie wydajności baz danych NoSQL", "System wspierania decyzji zakupowych w e-commerce"] },
-    { "imie": "Grzegorz", "nazwisko": "Szymański", "specjalizacja": "Sztuczna inteligencja w medycynie", "tematy": ["Zastosowanie AI w diagnostyce medycznej", "AI w analizie zdjęć medycznych (MRI, RTG)"] },
-    { "imie": "Łukasz", "nazwisko": "Duda", "specjalizacja": "IoT", "tematy": ["System monitorowania jakości powietrza oparty na IoT", "Analiza danych z sensorów w inteligentnych domach"] },
-    { "imie": "Magdalena", "nazwisko": "Pawlak", "specjalizacja": "Analiza danych", "tematy": ["Analiza obrazów satelitarnych z użyciem AI", "Zastosowanie sieci neuronowych w analizie danych finansowych"] },
-    { "imie": "Kamil", "nazwisko": "Jasiński", "specjalizacja": "Programowanie aplikacji mobilnych", "tematy": ["Aplikacja mobilna wspomagająca naukę języków obcych", "Bezpieczeństwo aplikacji mobilnych na Androida"] },
-    { "imie": "Sylwia", "nazwisko": "Bąk", "specjalizacja": "Zarządzanie projektami IT", "tematy": ["Automatyzacja zarządzania infrastrukturą IT z użyciem Ansible", "Projektowanie i wdrażanie CI/CD w projekcie programistycznym"] },
-    { "imie": "Maciej", "nazwisko": "Lis", "specjalizacja": "Grafika 3D", "tematy": ["Symulacja tłumów w środowisku 3D", "Tworzenie gier komputerowych z użyciem silnika Unity"] },
-    { "imie": "Izabela", "nazwisko": "Kaczmarek", "specjalizacja": "Systemy rozproszone", "tematy": ["Zastosowanie edge computing w systemach monitoringu", "System wspierania decyzji zakupowych w e-commerce"] },
-    { "imie": "Rafał", "nazwisko": "Borowski", "specjalizacja": "Uczenie głębokie", "tematy": ["Generowanie realistycznych obrazów za pomocą GAN-ów", "Wykorzystanie sieci neuronowych do komponowania muzyki"] },
-    { "imie": "Dorota", "nazwisko": "Piotrowska", "specjalizacja": "Przetwarzanie obrazów", "tematy": ["Analiza obrazów satelitarnych z użyciem AI", "AI w analizie zdjęć medycznych (MRI, RTG)"] },
-    { "imie": "Wojciech", "nazwisko": "Malec", "specjalizacja": "Symulacje komputerowe", "tematy": ["Symulacja tłumów w środowisku 3D", "Tworzenie gier komputerowych z użyciem silnika Unity"] },
-    { "imie": "Patrycja", "nazwisko": "Urban", "specjalizacja": "Sztuczna inteligencja w grach", "tematy": ["Tworzenie bota do gier FPS opartych na AI", "Symulacje AI w środowiskach 3D"] },
-    { "imie": "Dariusz", "nazwisko": "Kowalczyk", "specjalizacja": "Sieci komputerowe", "tematy": ["Analiza ryzyka w systemach informatycznych", "Automatyczne testowanie aplikacji webowych z wykorzystaniem Selenium"] },
-    { "imie": "Natalia", "nazwisko": "Cieślak", "specjalizacja": "VR/AR", "tematy": ["Wirtualna galeria sztuki w środowisku VR", "Wykorzystanie rozszerzonej rzeczywistości w edukacji"] },
-    { "imie": "Karol", "nazwisko": "Lewandowski", "specjalizacja": "Automatyzacja testów", "tematy": ["Automatyczne testowanie aplikacji webowych z wykorzystaniem Selenium", "Zastosowanie algorytmów genetycznych w optymalizacji tras"] },
-    { "imie": "Emilia", "nazwisko": "Sobczak", "specjalizacja": "Web development", "tematy": ["Tworzenie interfejsów użytkownika z użyciem React", "Optymalizacja działania aplikacji webowych"] },
-    { "imie": "Bartłomiej", "nazwisko": "Nowicki", "specjalizacja": "Sztuczna inteligencja w rolnictwie", "tematy": ["Zastosowanie AI w diagnostyce medycznej", "System analizy nastrojów na podstawie postów w social media"] },
-    { "imie": "Zuzanna", "nazwisko": "Maciejewska", "specjalizacja": "E-commerce", "tematy": ["System wspierania decyzji zakupowych w e-commerce", "System rekomendacyjny dla platformy e-commerce"] },
-    { "imie": "Marek", "nazwisko": "Jabłoński", "specjalizacja": "Technologie chmurowe", "tematy": ["Zarządzanie bezpieczeństwem danych w chmurze", "Zastosowanie edge computing w systemach monitoringu"] },
-    { "imie": "Julia", "nazwisko": "Wrona", "specjalizacja": "Bezpieczeństwo aplikacji webowych", "tematy": ["Bezpieczeństwo aplikacji mobilnych na Androida", "Zarządzanie bezpieczeństwem danych w chmurze"] },
-    { "imie": "Daniel", "nazwisko": "Kasprzak", "specjalizacja": "Bioinformatyka", "tematy": ["Zastosowanie AI w diagnostyce medycznej", "AI w analizie zdjęć medycznych (MRI, RTG)"] },
-    { "imie": "Alicja", "nazwisko": "Rogowska", "specjalizacja": "Systemy rekomendacyjne", "tematy": ["System rekomendacyjny dla platformy e-commerce", "System wspierania decyzji zakupowych w e-commerce"] }
+    {
+      "imie": "Anna",
+      "nazwisko": "Nowak",
+      "tematy": [
+        "Analiza wpływu AI na rynek pracy",
+        "Etyczne wyzwania rozwoju sztucznej inteligencji"
+      ]
+    },
+    {
+      "imie": "Jan",
+      "nazwisko": "Kowalski",
+      "tematy": [
+        "Wykrywanie ataków phishingowych za pomocą uczenia maszynowego",
+        "Zastosowanie sieci neuronowych w analizie danych finansowych"
+      ]
+    },
+    {
+      "imie": "Andrzej",
+      "nazwisko": "Skibidi",
+      "tematy": [
+        "Historia memów i ich wpływ na kulturę internetową"
+      ]
+    },
+    {
+      "imie": "Marcin",
+      "nazwisko": "Kwiecień",
+      "tematy": [
+        "Infrastruktura blockchain a kryptowaluty",
+        "Zastosowanie blockchain w logistyce"
+      ]
+    },
+    {
+      "imie": "Rafał",
+      "nazwisko": "Borowski",
+      "tematy": [
+        "Generowanie realistycznych obrazów za pomocą GAN-ów",
+        "Wykorzystanie sieci neuronowych do komponowania muzyki"
+      ]
+    },
+    {
+      "imie": "Dorota",
+      "nazwisko": "Piotrowska",
+      "tematy": [
+        "Analiza obrazów satelitarnych z użyciem AI",
+        "AI w analizie zdjęć medycznych (MRI, RTG)"
+      ]
+    },
+    {
+      "imie": "Wojciech",
+      "nazwisko": "Malec",
+      "tematy": [
+        "Symulacja tłumów w środowisku 3D",
+        "Tworzenie gier komputerowych z użyciem silnika Unity"
+      ]
+    },
+    {
+      "imie": "Patrycja",
+      "nazwisko": "Urban",
+      "tematy": [
+        "Tworzenie bota do gier FPS opartych na AI",
+        "Symulacje AI w środowiskach 3D"
+      ]
+    },
+    {
+      "imie": "Dariusz",
+      "nazwisko": "Kowalczyk",
+      "tematy": [
+        "Analiza ryzyka w systemach informatycznych",
+        "Automatyczne testowanie aplikacji webowych z wykorzystaniem Selenium"
+      ]
+    },
+    {
+      "imie": "Natalia",
+      "nazwisko": "Cieślak",
+      "tematy": [
+        "Wirtualna galeria sztuki w środowisku VR",
+        "Wykorzystanie rozszerzonej rzeczywistości w edukacji"
+      ]
+    },
+    {
+      "imie": "Karol",
+      "nazwisko": "Lewandowski",
+      "tematy": [
+        "Automatyczne testowanie aplikacji webowych z wykorzystaniem Selenium",
+        "Zastosowanie algorytmów genetycznych w optymalizacji tras"
+      ]
+    },
+    {
+      "imie": "Emilia",
+      "nazwisko": "Sobczak",
+      "tematy": [
+        "Tworzenie interfejsów użytkownika z użyciem React",
+        "Optymalizacja działania aplikacji webowych"
+      ]
+    },
+    {
+      "imie": "Bartłomiej",
+      "nazwisko": "Nowicki",
+      "tematy": [
+        "Zastosowanie AI w diagnostyce medycznej",
+        "System analizy nastrojów na podstawie postów w social media"
+      ]
+    },
+    {
+      "imie": "Zuzanna",
+      "nazwisko": "Maciejewska",
+      "tematy": [
+        "System wspierania decyzji zakupowych w e-commerce",
+        "System rekomendacyjny dla platformy e-commerce"
+      ]
+    },
+    {
+      "imie": "Marek",
+      "nazwisko": "Jabłoński",
+      "tematy": [
+        "Zarządzanie bezpieczeństwem danych w chmurze",
+        "Zastosowanie edge computing w systemach monitoringu"
+      ]
+    },
+    {
+      "imie": "Julia",
+      "nazwisko": "Wrona",
+      "tematy": [
+        "Bezpieczeństwo aplikacji mobilnych na Androida",
+        "Zarządzanie bezpieczeństwem danych w chmurze"
+      ]
+    },
+    {
+      "imie": "Daniel",
+      "nazwisko": "Kasprzak",
+      "tematy": [
+        "Zastosowanie AI w diagnostyce medycznej",
+        "AI w analizie zdjęć medycznych (MRI, RTG)"
+      ]
+    },
+    {
+      "imie": "Alicja",
+      "nazwisko": "Rogowska",
+      "tematy": [
+        "System rekomendacyjny dla platformy e-commerce",
+        "System wspierania decyzji zakupowych w e-commerce"
+      ]
+    },
+    {
+      "imie": "michał",
+      "nazwisko": "bal",
+      "tematy": [
+        "budowa komputerów kwantowych"
+      ]
+    },
+    {
+      "imie": "krzysztif",
+      "nazwisko": "krys",
+      "tematy": [
+        "nauka gry na gitarze"
+      ]
+    }
   ]
 }
