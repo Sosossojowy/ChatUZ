@@ -14,7 +14,7 @@ Mailrouter.post('/', async (req, res) => {
   
   // Etap 1: wpisanie e-maila
   if (!code) {
-    if (!email.endsWith('@gmail.com')) {
+    if (!email.endsWith('@g.elearn.uz.zgora.pl')) {
       return res.render('verify', {
         step: 'email',
         email: '',

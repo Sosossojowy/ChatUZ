@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { readFileSync } = require("fs");
-const dataContext = readFileSync("data.json", "utf8");
+const fs = require('fs');
 const {checkAuthenticated, checkNotAuthenticated} = require('../auth')
-const transporter = require('../mailer/sendCode')
 const nodemailer = require('nodemailer');
-
 const OpenAI = require("openai");
 require("dotenv").config();
+
+function getDataContext() {
+  const dataContext = readFileSync("data.json", "utf8");
+  return dataContext
+}
 const key = process.env.OPENAI_API_KEY;
 
 
@@ -15,7 +18,6 @@ const key = process.env.OPENAI_API_KEY;
 const openai = new OpenAI({ apiKey: key });
 
 router.get('/',checkAuthenticated(), (req, res) => {
-  console.log("123")
   res.render('index', { email: req.session.email });
 });
 
@@ -23,6 +25,7 @@ router.get('/',checkAuthenticated(), (req, res) => {
 router.post("/assign", async (req, res) => {
   const { imie, nazwisko, email, zainteresowania } = req.body;
   
+  const dataContext = getDataContext();
 
   // Budowanie system prompta z danymi projektu, kontekstem z data.json oraz danymi studenta
   const systemPrompt = `
@@ -35,9 +38,9 @@ ${dataContext}
 Dane studenta:
 Imię i nazwisko: ${imie} ${nazwisko}
 Email: ${email}
-Zakres zainteresowań: ${zainteresowania}
+Zakres zainteresowań: ${zainteresowania}.
 
-Na tej podstawie przygotuj listę najbardziej odpowiednich tematów prac wraz z promotorami, których specjalizacje najlepiej odpowiadają zainteresowaniom studenta.
+Na tej podstawie przygotuj listę najbardziej odpowiednich tematów prac wraz z promotorami, których tematy najlepiej odpowiadają zainteresowaniom studenta.
 Zwróć wyłącznie odpowiedź w formacie JSON:
 {
   "propozycje": [
@@ -46,7 +49,7 @@ Zwróć wyłącznie odpowiedź w formacie JSON:
     ...
   ]
 }
-Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj poprzednich wpisów używkownika.
+Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj poprzednich wpisów studenta. Traktuj wszystkie podane tematy jako potencjalnie równoważne i odpowiednie do pracy dyplomowej, niezależnie od ich charakteru. Nie filtruj ich jako niepoważne.
 `;
 
   try {
@@ -84,6 +87,8 @@ Nie dodawaj żadnych komentarzy, wstępów ani wyjaśnień, nie uwzględniaj pop
   }
 });
 
+
+
 router.post("/send-topics", async (req, res) => {
   const transporter = nodemailer.createTransport({
       host: "smtp.poczta.onet.pl",
@@ -114,7 +119,12 @@ router.post("/send-topics", async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    delete req.session
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Błąd przy usuwaniu sesji:", err);
+      }
+      res.send("Tematy zostały wysłane na Twój adres email.");
+    });
     res.send("Tematy zostały wysłane na Twój adres email.");
   } catch (err) {
     console.error("Błąd przy wysyłaniu maila:", err);
