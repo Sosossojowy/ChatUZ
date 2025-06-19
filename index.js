@@ -14,8 +14,6 @@ const key = process.env.OPENAI_API_KEY;
 // Inicjalizacja klienta OpenAI
 const openai = new OpenAI({ apiKey: key });
 
-// Wczytanie danych kontekstowych z pliku data.json
-// const dataContext = readFileSync("data.json", "utf8");
 
 // Inicjalizacja aplikacji Express
 const app = express();
@@ -33,11 +31,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(expressLayouts)
 app.set('layout', 'layout')
 
-app.use((req, res, next) => {
-  res.setHeader('Cache-Control', 'no-store');
-  res.setHeader('Pragma', 'no-cache');
-  next();
-});
 
 
 app.use(session({
