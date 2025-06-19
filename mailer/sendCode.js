@@ -29,5 +29,4 @@ async function sendVerificationCode(email, code) {
     return false;
   }
 }
-
 module.exports = sendVerificationCode;

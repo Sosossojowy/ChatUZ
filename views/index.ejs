@@ -8,21 +8,20 @@
   <div id="loader">
     <div class="spinner"></div>
     <div class="text">
-      <p>Wczytywanie...</p> 
+      <p>Przydzielam tematy...</p> 
     </div>
-
   </div>
 
   <div class="input-container">
     <form class="form-container" id="assignForm" action="/assign" method="POST">
       <div class="form-field"><input type="text" name="imie" id="imie" placeholder="Imię" required></div>
       <div class="form-field"><input type="text" name="nazwisko" id="nazwisko" placeholder="Nazwisko" required></div>
-      <div class="form-field"><input type="email" name="email" id="email" placeholder="Email" required></div>
+      <div class="form-field"><input type="email" name="email" id="email" placeholder="Email" value="<%= email %>" required></div>
       <div class="form-field"><textarea name="zainteresowania" id="zainteresowania" placeholder="Zakres zainteresowań" required></textarea></div>     
       <button type="submit">Przydziel temat i promotora</button>
     </form>
   </div>
-
+ 
   <script>
     document.getElementById("assignForm").addEventListener("submit", function () {
       document.getElementById("loader").style.display = "flex";

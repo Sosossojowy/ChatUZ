@@ -7,7 +7,7 @@
       <% propozycje.forEach(function(propozycja) { %>
         <li>
           <strong>
-            <a href="">
+            <a href="/">
               <%= propozycja.temat %>
             </a>
           </strong><br>
@@ -20,9 +20,9 @@
   <% } %>
   <br>
 </div>
-  <form action="/" class="back btn">
-    <button type="submit">Powrót</button>
-  </form>
+  <form action="/send-topics" method="POST">
+    <button type="submit">Wyślij listę tematów na maila</button>
+</form>
 </section>
 
 

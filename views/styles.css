@@ -9,7 +9,7 @@ body {
     margin: 0;
     position:relative;
   }
-  .veryfi-main{
+  .verify-main{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -142,7 +142,7 @@ body {
 
 }
 .result ol li:hover{
-  background-color: rgba(65, 65, 248, 0.61);
+  background-color: rgba(136, 136, 136, 0.692);
   transition: 0.3s ease;
     
     }
@@ -169,6 +169,7 @@ body {
     justify-content: center;
     background-color: white;
     align-items: center;
+    z-index: 10;
     
   }
   .text p{
@@ -183,7 +184,7 @@ body {
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
-  .veryfi-main img{
+  .verify-main img{
     align-items: start;
     max-width: 400px;
     background-image:url("./images/logo\ UZ\ pion\ -\ CMYK.jpg")

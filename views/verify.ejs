@@ -1,5 +1,11 @@
 <body id="inne-tlo">
-  <div class="veryfi-main">
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="text">
+      <p>Wysyłam kod weryfikacyjny...</p> 
+    </div>
+  </div>
+  <div class="verify-main">
     <img src="./images/logo UZ pion - CMYK.jpg">
     <div class="header">
       <h1></h1>
@@ -7,7 +13,7 @@
     
       <% if (step === 'email') { %>
     <div class="input-mail">
-      <form action="/verify" method="POST" class="form-vertical">
+      <form action="/verify" id="assignForm" method="POST" class="form-vertical">
         <input type="email" name="email" placeholder="Adres e-mail" required>
     </div>
     <div class="error">
@@ -32,5 +38,16 @@
         </form>
       <% } %>
   </div>
+
+  <% if (step === 'email') { %>
+    <script>
+    document.getElementById("assignForm").addEventListener("submit", function () {
+      document.getElementById("loader").style.display = "flex";
+    });
+    </script>
+  <% } %>
+
+
+  
 </body>
 

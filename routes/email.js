@@ -1,6 +1,8 @@
 const express = require('express');
 const Mailrouter = express.Router();
 const sendVerificationCode = require('../mailer/sendCode');
+
+
 const verificationCodes = {};
 
 Mailrouter.get('/', (req, res) => {
@@ -9,10 +11,10 @@ Mailrouter.get('/', (req, res) => {
 
 Mailrouter.post('/', async (req, res) => {
   const { email, code } = req.body;
-    console.log(req.body)
+  
   // Etap 1: wpisanie e-maila
   if (!code) {
-    if (!email.endsWith('@gmail.com')) {
+    if (!email.endsWith('@g.elearn.uz.zgora.pl')) {
       return res.render('verify', {
         step: 'email',
         email: '',
@@ -22,9 +24,8 @@ Mailrouter.post('/', async (req, res) => {
 
     const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
     verificationCodes[email] = verificationCode;
-    
+    console.log(verificationCode)
     const sent = await sendVerificationCode(email, verificationCode);
-    console.log(sent)
     if (!sent) {
       return res.render('verify', {
         step: 'email',
@@ -43,7 +44,8 @@ Mailrouter.post('/', async (req, res) => {
   // Etap 2: weryfikacja kodu
   if (verificationCodes[email] === code) {
     delete verificationCodes[email];
-    return res.redirect('/');
+    req.session.email = req.body.email;
+    return res.render('index',{ email : req.session.email});
   }
 
   return res.render('verify', {
